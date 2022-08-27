@@ -2,7 +2,6 @@ const handSigns = ["ROCK", "PAPER", "SCISSORS"];
 const draw = "It's a draw! Computer also chose "
 const win = "You win! Computer chose "
 const lose = "You lose! Computer chose "
-const errorHandsign = "Error, incorrect handsign chosen.";
 const introMsg = "Welcome to Rock Paper Scissors. Choose a handsign."
 let playerAnswer;
 
@@ -13,7 +12,8 @@ function getComputerChoice() {
     return handSigns[index]
 }
 
-function playRockPaperScissors(playerSelection, computerSelection = getComputerChoice()) {
+function playRockPaperScissors(playerSelection,
+    computerSelection = getComputerChoice()) {
     playerSelection = playerSelection.toUpperCase();
     switch (playerSelection) {
         case "ROCK":
@@ -33,7 +33,7 @@ function playRockPaperScissors(playerSelection, computerSelection = getComputerC
                     return draw + computerSelection;
                 case "SCISSORS":
                     return lose + computerSelection;
-            }        
+            }
         case "SCISSORS":
             switch (computerSelection) {
                 case "ROCK":
@@ -43,10 +43,40 @@ function playRockPaperScissors(playerSelection, computerSelection = getComputerC
                 case "SCISSORS":
                     return draw + computerSelection;
             }
-        default:
-            return errorHandsign;
     }
 }
 
-playerAnswer = prompt(introMsg);
-console.log(playRockPaperScissors(playerAnswer));
+function game() {
+    let playerScore = 0;
+    let compScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        playerAnswer = prompt(introMsg);
+        result = playRockPaperScissors(playerAnswer);
+        console.log(result);
+
+        while (result.includes(draw)) {
+            playerAnswer = prompt("Draw. Enter another handsign.");
+            result = playRockPaperScissors(playerAnswer);
+            console.log(result);
+        }
+
+        if (result.includes(win)) {
+            ++playerScore;
+        }
+        else if (result.includes(lose)) {
+            ++compScore;
+        }
+
+        if (playerScore > compScore && playerScore === 3) {
+            console.log("Victory! Man triumphs against machine.")
+            break;
+        }
+        else if (compScore > playerScore && compScore === 3) {
+            console.log("Failure! Machines reign supreme.")
+            break;
+        }
+    }
+}
+
+game();
