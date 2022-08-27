@@ -1,6 +1,6 @@
-#odin-rss
+# odin-rss
 Third project for The Odin Project where a user can play Rock Paper Scissors.
-##Things learned:
+## Things learned:
 * Creating JavaScript functions that allow arguments to be passed in
 * Using for and while loops
 * Adding conditional logic through the use of switch case
