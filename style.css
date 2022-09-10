@@ -6,6 +6,15 @@ body {
     padding: 0;
 }
 
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
 .board {
     min-width: 100vw;
     justify-content: center;
@@ -22,4 +31,9 @@ body {
 
 .choice {
     width: 100px;
+}
+
+.output p {
+    display: flex;
+    justify-content: center;
 }

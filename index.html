@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <div class="board">
         <div class="choices">
@@ -20,8 +22,19 @@
         </div>
         <div class="output">
             <p>Computer chose: </p>
+            <table>
+                <tr>
+                    <td id="player-score-head">Player Score </td>
+                    <td id="computer-score-head">Computer Score </td>
+                </tr>
+                <tr>
+                    <td id="player-score-cell">0</td>
+                    <td id="computer-score-cell">0</td>
+                </tr>
+            </table>
         </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>

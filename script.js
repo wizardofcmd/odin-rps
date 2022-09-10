@@ -3,7 +3,8 @@ const draw = "It's a draw! Computer also chose "
 const win = "You win! Computer chose "
 const lose = "You lose! Computer chose "
 const introMsg = "Welcome to Rock Paper Scissors. Choose a handsign."
-let playerAnswer;
+const buttons = document.querySelectorAll('button');
+let playerChoice;
 
 function getComputerChoice() {
     // Generates an int number between 1, 2 or 3
@@ -14,7 +15,6 @@ function getComputerChoice() {
 
 function playRockPaperScissors(playerSelection,
     computerSelection = getComputerChoice()) {
-    playerSelection = playerSelection.toUpperCase();
     switch (playerSelection) {
         case "ROCK":
             switch (computerSelection) {
@@ -47,12 +47,19 @@ function playRockPaperScissors(playerSelection,
 }
 
 function game() {
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            playerChoice = button.textContent.toUpperCase();
+            console.log(playerChoice)
+
+            result = playRockPaperScissors(playerChoice);
+            console.log(result);
+        });
+    });
+
     let playerScore = 0;
     let compScore = 0;
-
-    // playerAnswer = prompt(introMsg);
-    // result = playRockPaperScissors(playerAnswer);
-    // console.log(result);
 }
 
 game();
