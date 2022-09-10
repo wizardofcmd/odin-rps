@@ -68,6 +68,10 @@ function updateScore(roundResult) {
 function game() {
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
+            if (playerScore === 5 || compScore === 5) {
+                return;
+            }
+
             playerChoice = button.textContent.toUpperCase();
             result = playRockPaperScissors(playerChoice);
             updateScore(result);
