@@ -37,3 +37,11 @@ td {
     display: flex;
     justify-content: center;
 }
+
+.lose-txt {
+    color: red;
+}
+
+.win-txt {
+    color: green;
+}
