@@ -50,33 +50,9 @@ function game() {
     let playerScore = 0;
     let compScore = 0;
 
-    for (let i = 0; i < 5; i++) {
-        playerAnswer = prompt(introMsg);
-        result = playRockPaperScissors(playerAnswer);
-        console.log(result);
-
-        while (result.includes(draw)) {
-            playerAnswer = prompt("Draw. Enter another handsign.");
-            result = playRockPaperScissors(playerAnswer);
-            console.log(result);
-        }
-
-        if (result.includes(win)) {
-            ++playerScore;
-        }
-        else if (result.includes(lose)) {
-            ++compScore;
-        }
-
-        if (playerScore > compScore && playerScore === 3) {
-            console.log("Victory! Man triumphs against machine.")
-            break;
-        }
-        else if (compScore > playerScore && compScore === 3) {
-            console.log("Failure! Machines reign supreme.")
-            break;
-        }
-    }
+    // playerAnswer = prompt(introMsg);
+    // result = playRockPaperScissors(playerAnswer);
+    // console.log(result);
 }
 
 game();
